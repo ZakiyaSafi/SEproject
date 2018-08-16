@@ -2,7 +2,7 @@
 
 Zakkiya Safi
 Ahmed Ali Karani
-Zubair Balubia
+Zubair Ahmed Bulbulia
 Kyle Morris
 
 Project definition: Students Marks/Record Management System
