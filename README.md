@@ -19,9 +19,9 @@ The Student must be able to track their progress throughout the duration of a co
 
 Course Coordinator perspective:
 
-The Course Coordinator(CC) should have the ability to add assessments to the database, as well as define the weighting of the assessments to enable students to see how much they contribute to the overall mark. The UI should make it easy to enter marks for students’ assessments, whether for individual students or for the entire class.
-The course coordinator should be able to print a table of students and their respective marks for a course.
-The course coordinator must be able to generate a statistical summary of the performance of the student/s for each assessment.
+The Course Coordinator(CC) should have the ability to add assessments to the database, as well as define the weighting of the assessments to enable students to see how much they contribute to the overall mark. The UI should make it easy to enter marks for students’ assessments, whether for individual students or for the entire class. 
+The course coordinator should be able to print a table of students and their respective marks for a course. 
+The course coordinator must be able to generate a statistical summary of the performance of the student/s for each assessment. 
 The course coordinator must also be able to view a projected pass rate for the students based on marks that have been accumulated so far. 
 Additionally, the coordinator must also be able to record any offence of a student occurring during the running of the course.
 
@@ -54,20 +54,18 @@ The back end will be developed using an ASP.NET MVC frameworks, using technologi
 Required inputs:
 
 Student:
-
-Student ID and password.
-
-Query a mark
+-Student ID and password.
+-Query a mark
 
 Course Coordinator:
-Course Coordinator ID and Password
-Assessments of course
-Weightings of assessments
-Results of assessments of each student
+-Course Coordinator ID and Password
+-Assessments of course 
+-Weightings of assessments 
+-Results of assessments of each student
 
 School Administrator:
-School Administrator ID and Password
-Registration details for registering students for a course
+-School Administrator ID and Password 
+-Registration details for registering students for a course 
 
 The following users of the system are involved with back end tasks and as such will not directly contribute to the the system as end-users. However, their involvement is as follows:
 
@@ -79,22 +77,22 @@ This responsibility includes overseeing both the monitoring and security of the 
 
 Outputs to be displayed:
 Student: 
-Assessment results for each course
-Statistics for each assessment
-Required mark necessary to achieve a pass per course 
+-Assessment results for each course 
+-Statistics for each assessment 
+-Required mark necessary to achieve a pass per course 
 
-Course Coordinator:
-Table of students and their marks
-Summary statistics of performance of students
-Projected pass rate based on assessment marks accumulated
+Course Coordinator: 
+-Table of students and their marks 
+-Summary statistics of performance of students 
+-Projected pass rate based on assessment marks accumulated 
 
-School Administrator:
-Table of students and their marks
-Summary statistics of performance of students
-Comparative chart of assessment marks of selected students in a particular group
-Histogram of assessment marks of all courses taken by a specific student
-Recorded offences
-Performances in the same course across different years
+School Administrator: 
+-Table of students and their marks 
+-Summary statistics of performance of students 
+-Comparative chart of assessment marks of selected students in a particular group 
+-Histogram of assessment marks of all courses taken by a specific student 
+-Recorded offenses 
+-Performances in the same course across different years 
 
 Front end UI needs to combine with data from back end databases in order to create a visually appealing, easy to navigate portal to achieve the above mentioned tasks.
 
@@ -102,6 +100,6 @@ Responsibilities of group members:
 Given the large scale and complexity of the system to be designed and implemented, responsibilities need to be assigned to group members based on strengths as well as experience in the different aspects of the project.
 
 Zakiya Safi: Programming lead 
-Ahmed Ali Karani: Database design and implementation lead
-Zubair Ahmed Bulbulia: UI and UX
+Ahmed Ali Karani: Database design and implementation lead 
+Zubair Ahmed Bulbulia: UI and UX 
 Kyle Morris: Documentation and reporting 
