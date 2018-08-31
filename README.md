@@ -14,9 +14,11 @@ The task is to develop a web-based system with the capabilities of being able to
 Features to consider:
 
 Student perspective: 
+
 The Student must be able to track their progress throughout the duration of a course. The Student must be provided with minimum percentages required for future assessments in order to pass the course. The Student must also be provided with the functionality of querying marks for assessments. Students must have the limitation of not having access to other students' marks, and not being able to make modifications to their own marks. 
 
 Course Coordinator perspective:
+
 The Course Coordinator(CC) should have the ability to add assessments to the database, as well as define the weighting of the assessments to enable students to see how much they contribute to the overall mark. The UI should make it easy to enter marks for students’ assessments, whether for individual students or for the entire class.
 The course coordinator should be able to print a table of students and their respective marks for a course.
 The course coordinator must be able to generate a statistical summary of the performance of the student/s for each assessment.
@@ -24,6 +26,7 @@ The course coordinator must also be able to view a projected pass rate for the s
 Additionally, the coordinator must also be able to record any offence of a student occurring during the running of the course.
 
 School Administrator perspective:
+
 The School Administrator(SA) must be able to register students for their courses.
 As with a CC, the SA should be able to print a table of students and their respective marks for a course, as well as be able to generate a statistics summary of the students performance.
 The SA must also be able to view a comparative chart of students marks of a particular group. Also the SA must be able to view a histogram of a students assessments marks across all courses.
@@ -51,7 +54,9 @@ The back end will be developed using an ASP.NET MVC frameworks, using technologi
 Required inputs:
 
 Student:
-Student ID and password
+
+Student ID and password.
+
 Query a mark
 
 Course Coordinator:
