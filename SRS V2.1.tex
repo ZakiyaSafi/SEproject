@@ -1,0 +1,423 @@
+
+\title{Project Report}
+
+\documentclass[paper=a4, fontsize=11pt]{scrartcl}
+\renewcommand{\baselinestretch}{1.5} 
+
+
+\usepackage[english]{babel}															% English language/hyphenation
+\usepackage[protrusion=true,expansion=true]{microtype}	
+\usepackage{amsmath,amsfonts,amsthm} % Math packages
+\usepackage[pdftex]{graphicx}	
+\usepackage{url}
+
+
+%%% Custom sectioning
+%\allsectionsfont{\centering \normalfont\scshape}
+
+
+%%% Custom headers/footers (fancyhdr package)
+\usepackage{fancyhdr}
+\pagestyle{fancyplain}
+\fancyhead{}											% No page header
+\fancyfoot[L]{}											% Empty 
+\fancyfoot[C]{}											% Empty
+\fancyfoot[R]{\thepage}									% Pagenumbering
+\renewcommand{\headrulewidth}{0pt}			% Remove header underlines
+\renewcommand{\footrulewidth}{0pt}				% Remove footer underlines
+\setlength{\headheight}{13.6pt}
+
+
+%%% Equation and float numbering
+\numberwithin{equation}{section}		% Equationnumbering: section.eq#
+\numberwithin{figure}{section}			% Figurenumbering: section.fig#
+\numberwithin{table}{section}				% Tablenumbering: section.tab#
+
+
+% % %subsubsub
+%\documentclass{article}
+\makeatletter
+\renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}%
+            {-2.5ex\@plus -1ex \@minus -.25ex}%
+            {1.25ex \@plus .25ex}%
+            {\normalfont\normalsize\bfseries}}
+\makeatother
+\setcounter{secnumdepth}{4} % how many sectioning levels to assign numbers to
+\setcounter{tocdepth}{4}    % how many sectioning levels to show in ToC
+
+% %end subsubsub
+
+
+%%% Maketitle metadata
+\newcommand{\horrule}[1]{\rule{\linewidth}{#1}} 	% Horizontal rule
+
+\title{
+		%\vspace{-1in} 	
+		\usefont{OT1}{bch}{b}{n}
+		\normalfont \normalsize \textsc{Software Engineering 2018} \\ [25pt]
+		\horrule{0.5pt} \\[0.4cm]
+		\huge Software Requirement Specification V2.1\\
+		\horrule{2pt} \\[0.5cm]
+}
+\author{
+		\normalfont 					
+       \normalsize Zakiya Safi 1319070\\
+       \normalsize Ahmed Ali Karani 1036074 \\
+       \normalsize Zubair Ahmed Bulbulia 1249593 \\
+        \normalsize Kyle Morris 1112649\\\\[-3pt]	}	\normalsize      
+ \date{9 September 2018}
+
+
+
+%%% Begin document
+\begin{document}
+
+\maketitle
+
+\newpage \tableofcontents
+
+\newpage
+\section{Project definition:}
+The project requirement that the group is required to fulfil is that of the ​ Student Mark
+Management System. ​ The end result will be a fully-functioning web portal where students
+are able to view their marks for a number of courses.
+
+\subsection{Scope:}
+The task requirement is to develop a web-based system with the capabilities of being able to
+record marks of various assessments, for a multitude of students. It will thus function as a
+database for all student marks, across various courses. On the front-end, it is required to
+implement separate functionality and limitations for three different categories of user -
+student, course coordinator and school administrator. There must exist the capability for
+Course Coordinator and School Administrator to be able to access, edit and update marks
+on the database, as well as being able to view student marks. From the student side, they
+need to be able to view their marks from the 'portal'. They must also have the ability to query
+a certain assignment mark if they believe there to be an error with it. Students must have the
+limitation of not having access to other students' marks, and not being able to make
+modifications to their own marks.
+There are two back-end roles that need to be fulfilled: The database administrator, who is
+responsible for ensuring the correct format of marks is recorded, that there are no erroneous
+values stored, and that backups exist and are frequently maintained, and the Systems
+administrator who is tasked with ensuring the correct system configuration is established, as
+well as the security perspectives of the portal.
+\\
+\section{Specific Project requirements:}
+The group has been tasked with specifically creating a web-based application (herein
+referred to as the portal). The portal will need to incorporate a fully functioning front-end
+(User interface), which is simple for all users to navigate (user friendly), aesthetically
+pleasing, produces the correct output, displays correctly formatted information on the student
+portal page, and have the correctly implemented security features to grant and restrict
+access to certain features and/or information, for particular users.
+For the back-end (database) requirements, it is necessary to ensure the correct relationships
+exist between the various tables. It is imperative to select the correct identifying keys
+(primary and foreign), to ensure the correct relational organisation of database entries is
+upheld and maintained. Correct data types for the different attribute values must be selected
+(eg. to store marks/scores for assessments as numerical values rather than text values, to
+allow the creation of mathematical results, summaries and interpretive statistics). The
+database needs to be continuously maintained, backed-up and updated to ensure the best
+user experience on the portal and to rectify any bugs or glitches that may have resulted from
+incorrect data collection, storing or manipulation.
+\\
+\subsection{External interface requirements:}
+
+\subsubsection{User Types:}
+\paragraph{Student:}The first type of user is the Student. The Student will be required to ‘login’
+to the portal by using their ID - most likely their ‘Student number’ and a
+password (which will be set to their student number by default, and then
+changed once they have logged in for the first time). The portal will then
+load the ‘student’ home page. On this page, they will be provided with an
+overview of courses they are enrolled in. There will then be a clickable
+link for each enrolled course, which will take them to an assessment
+summary page (ASP) (for that course). On that page, all relevant marks
+will be able to be viewed, as well as the weighting to their overall course
+mark (a value out of 100). On each ASP, there will be a built-in tool that
+shows the mark(s) that need to be achieved on their remaining
+assessment(s) to achieve a pass. There must also be an option to ‘report
+a mark’ where a student believes a mark to be incorrectly stored.
+\paragraph{Course Coordinator:} The next user is a Course Coordinator (CC). This type of user has a
+much greater administrative role and access on the portal than student.
+The CC is granted privileges of being able to sign-up to the portal. A
+password will be given to this type of admin in order to allow the sign-up
+to happen, and to prevent student from doing same. The CC needs to be
+able to add students to courses, enter marks for the students, as well as
+to add weighting to each assessment to define its contribution to the total
+course mark. All of these functions needs to be done in a restrictive
+manner. What is meant by this, is that the CC does not need to be aware
+of the data-storing conventions. Rather, error checking must exist in
+order to make sure data integrity remains intact when a CC is uploading
+marks and defining weighting. This needs to be done in the most
+user-friendly and efficient manner. (an example of such is that forcing
+marks to be entered by means of a scroll-box will ensure data integrity,but will not be efficient, and so to simply have an edit box that
+implements error checking afterwards is more efficient). Additional
+features can be present for the CC. This can include options such as
+statistical analysis to have access to both spreadsheets of data, and
+potentially even graphs to give a representative overview of students’
+marks.
+\paragraph{School Administrator: } The final user type is School Administrator (SA). This type of user will have the same privileges as CC, as well as additional privileges. These
+include the ability of SA to be able to generate comparative information of
+courses for which they oversee, in order to identify which courses are
+performing well, and which are not. Also, as SA, they must be able to
+view any offenses of students (plagiarism, course exclusion, etc.) which
+would prevent them from being enrolled in the course. 
+\\
+\subsection{Interfaces:}
+\subsubsection{Hardware Interfaces:}
+This type of interface describes the physical components which are necessary to interact
+with the portal. As it is a web based portal, an internet connection needs to firstly be
+established to allow the user to access the portal, as well as to provide a good user
+experience by means of the database information being correctly and efficiently displayed on
+the portal pages. Any networking-enabled computing device will be able to interact with the
+portal. An input device (such as a physical keyboard) is required to login to the respective
+portal pages. A pointing device (like a mouse) will provide the best user experience as it
+provides ease of access with regard to navigating the portal pages. This method would be
+aimed at a more desktop computer approach. For a mobile approach, the user would likely
+make use of their touch screen to navigate the portal and make interactions.
+
+\subsubsection{Software Interfaces:}
+A web browser (such as Chrome, Safari, Mozilla Firefox, Internet Explorer, or Microsoft
+Edge) is required to access the system. Our main form of software interaction is done via the
+front end Graphical User Interface (GUI). This interface allows the user to interact with thesystem using the above described pointing device. As this is the primary source of
+interaction between user and system, it is important to create a GUI which is easy to
+navigate, not confusing to use, and that the interactions produce the expected results.
+
+\subsubsection{Communication Interfaces:}
+Communication needs to exist on the portal between the back-end databases and the
+web-based application. Communication will be made possible through SQL.
+\\
+\subsection{System Features:}
+\subsubsection{Interaction with the portal:}
+\paragraph{Description and Priority:}
+The requirements of this feature set define how the system allows viewing, updating,
+modification and creation of mathematical statistics pertaining to specific students and
+courses within the portal. The system is a web-portal which functions as an electronic marks
+source, which allows students to view marks, and administrators to upload and edit marks.
+
+\paragraph{Stimulus/Responses:}
+
+\textbf{Stimulus:}​ a student wants to view their marks for a specific course.\\
+\textbf{Response:}​ The system uses the web-portal to avail all marks pertaining to that student.\\\\
+\textbf{Stimulus:}​ A user wants to see what mark they need to pass the course.\\
+\textbf{Response:}​ A statistical analysis is made, tallying up their completed assignments and
+weightings, and what is still to be completed, to determine the mark required to pass.\\ \\
+\textbf{Stimulus:} ​ Course Coordinator wants to upload new marks.\\
+\textbf{Response:} ​ The system allows the entry of marks, which are then stored on the database.\\ \\
+\textbf{Stimulus:} ​ Student wants to report a mark error.\\
+\textbf{Response:} ​ An option exists to send an error to the course coordinator, which will
+automatically be associated with the mark they are currently accessing. \\ \\
+\textbf{Stimulus:} ​ School administrator wants to remove students who has committed infringements.\\
+\textbf{Response:}  ​ The system allows all infringements associated with students to be viewed, as
+well as the administrative privileges of removing a student.
+
+\subsubsection{Access Control features:}
+\paragraph{Description and Priority:}
+The requirements for this feature set describe how users are granted privileges as well as
+having access to certain features limited, depending on their login-type. 
+
+\paragraph{Stimulus/Responses:}
+
+\textbf{Stimulus:} ​ A student wants to change one of their marks.\\
+\textbf{Response:} ​ The are restricted to read-only access for their marks. They can send a query to
+admin if they believe a mark to be incorrect.\\ \\
+\textbf{Stimulus:} ​ A student wants to view one of their friends marks.\\
+\textbf{Response:} ​ The student is restricted from doing this, as their login provides them with
+access to the marks associated with their login details only.\\ \\
+\textbf{Stimulus:} ​ A Course Coordinator wants to upload new marks for an assessment.\\
+\textbf{Response:} ​ The login details will grant admin the ability to modify and upload new
+assessment records.
+
+\subsubsection{Storage features:}
+\paragraph{Description and Priority:}
+The requirements for this feature set describe how data is uploaded to the database,
+specifying data types, and how information is obtained from the portal.
+
+\paragraph{Stimulus/Responses:}
+
+\textbf{Stimulus:} ​ A student logs in, wanting to see their latest marks.\\
+\textbf{Response:}​ The system sends a query to the database, to load and display the marks
+associated with their login ID.\\ \\
+\textbf{Stimulus:} ​ A Course coordinator wishes to upload marks, but accidently records a character
+instead of a numerical value.\\
+\textbf{Response:}​ Error checking will evaluate the input before sending the query to store the value
+in the database. This reduces complexity as it ensures no error data types can be stored for
+marks.\\ \\
+\textbf{Stimulus:} ​ A Course coordinator wishes to add a student to the system, but that student
+already exists.\\
+\textbf{Response:}​ As student is defined by ID, this is the primary key, and so a prompt must show
+that this action is invalid as the student already exists on the database.
+\\
+\subsection{Performance requirements:}
+\subsubsection{Response time:}
+The system needs to respond quickly regardless of device being used. Any delay will reduce
+the quality of the user experience with the portal. In order to minimise delays, scripting needs
+to be made as efficient as possible, to make the portal appear to have as instantaneous a
+response as possible. There are different response times to consider: when logging in, a
+user can sometimes expect to have a slight delay while their request is processed. However,
+once the page loads, the user expects to be able to view a fully rendered interface. Thus it
+would make more sense to force the system to wait slightly longer when logging in to
+achieve this, rather than a delay when logging in, and another delay to view their marks.
+With statistical analysis, as this is described as a ‘feature’, it is assumed that a user may be
+more accepting to wait slightly longer to receive the requested output.
+
+\subsubsection{Scalability:}
+The system should be able to handle increasing number of students and coordinators
+without major changes being made. The system should be developed in such a way that as
+the user base grows, storage and processing power can be increased without causing major
+disruptions to the day to day use of the platform.During the testing phase of the system,
+scalability will not be as much of a concern as ensuring the system functions optimally.
+However, new errors can arise under much higher traffic volumes and so it is important to try
+identify the limitations of the system during the testing phase in order to be better aware of
+how greatly resources need to be increased in the event of average traffic volumes growing
+rapidly. It is also important to ensure that if such a time occurs, the system has beendesigned in a simplistic enough way to allow for the database to be migrated to a more
+suitable location.
+
+\subsubsection{Workload:}
+The workload on the users device through the portal should be minimal as the device being
+used can vary from low-powered devices (smartphones) to high-performing devices
+(computers). The major processing tasks should therefore be performed on an external
+machine (server) in order to reduce processing load from the end users. Furthermore, a
+variety of transactions will exist with the portal: firstly are requests from the student (user) to
+view marks. This is a priority request as a large faster contributing to the efficiency of the
+portal is the user experience. Another transaction will be that of a Course Coordinator
+uploading marks for a course, for a number of students. A problem could arise when a
+student is trying to access their marks whilst a modification is being made to their portfolio,
+and so scheduling needs to be implemented for administrators to either upload marks during
+times of low network traffic, or for students to be restricted access during this time. Another
+transaction that needs to be prioritised is that of backups. It is vitally important to have
+up-to-date records of data. This however can be scheduled for low network traffic times and
+so will reduce the possibility of delays and corrupt data.
+\\
+\subsection{Constraints:}
+\subsubsection{Technological constraints:}
+\begin{enumerate}
+	\item The portal must be available for use by students and Course Coordinators 24/7. This
+	means the server needs to be always active and accessible. 
+	\item The system must be usable on devices of varying performance. This means that the
+	system must be optimised to ensure that it works regardless of the device being used
+	to access the system. 
+	\item The system must be developed using an ASP.NET MVC framework and will include
+	technologies such as C-Sharp, HTML, and CSS. This means the expansion of the system
+	and design is restricted by the limitations of the coding language.
+	\item The system will also integrate mathematical packages using R or Matlab for carrying
+	out statistical calculations and data analytics, as well as plotting necessary graphs.
+	\item The database must be able to handle multiple, simultaneous transactions without
+	losing or corrupting data. This will be guided by the implementation of the database
+	itself.
+	\item Effective running of the system will be a direct result of the implementation and
+	design.
+\end{enumerate}
+
+\subsubsection{Design Constraints:}
+\begin{enumerate}
+\item The user interface must be intuitive, and visually appealing.
+\item The GUI must be responsive to user inputs, and must produce correct outputs as a
+result of this. This will be restricted by providing a limited number of options which the
+user can access.
+\item The system must work on all modern day computing devices (Personal Computers,
+Laptops, Smartphones, Tablets).
+\item The user interface must be designed in a dynamic manner that allows for scalability.
+The user interface must render correctly according to the display size. All associated
+components must correctly resize and maintain the visual layout component of the
+portal.
+\end{enumerate}
+
+\subsubsection{General Constraints:}
+\begin{enumerate}
+\item The portal must be developed and completed in the given period of time (roughly 4
+months).
+\item The system is limited by the server hardware specifications on which it will be run.
+\item The system will be developed and implemented by only 4 people, meaning task
+allocation needs to be carefully allocated, and deadlines need to be met.
+\item As it is a group effort, collaborative input is required. Decisions need to be made
+quickly and efficiently.
+\item The back-end of the system requires raw data in order to work correctly. This means
+that ‘test’ courses and marks either need to be created, or existing mark
+spreadsheets need to be obtained. In the case of the latter, confidentiality of
+information needs to be maintained.\\
+\end{enumerate}
+
+\subsection{Assumptions:}
+\subsubsection{Student:}
+\begin{itemize}
+\item Student marks will be available from the portal.
+\item Students feel comfortable logging into and using the web portal.
+\item Students have an understanding of a web-based application and so understand
+possible system delays.
+\item Students make effective use of the system.
+\end{itemize}
+
+\subsubsection{Course Coordinator:}
+\begin{itemize}
+\item CC will be responsible for uploading marks onto the database.
+\item CC is comfortable with dealing with and making changes to the system.
+\item CC understands how to apply a certain weighting to a course.
+\end{itemize}
+
+\subsubsection{School Administrator:}
+\begin{itemize}
+\item SA knows how to navigate between different courses.
+\item SA is comfortable with creating comparative statistics on different courses.
+\item SA is able to identify students with offenses and can remove them from the course
+(unenrol).
+\end{itemize}
+
+\subsubsection{Database Administrator:}
+\begin{itemize}
+\item The database is correctly created with the appropriate relationships between entities
+being implemented.
+\item The data types of respective fields are appropriately defined.
+\item Any erroneous data that appears during testing will be rectified.
+\item Backups will be done regularly, and stored appropriately.
+\end{itemize}
+
+\subsubsection{Systems Administrator:}
+\begin{itemize}
+\item The security of the system will ensure no ungranted access is provided to respective
+users.
+\item The system will communicate between the front and back-end without error. \\
+\end{itemize}
+
+\subsection{Software system attributes:}
+\subsubsection{Reliability:}
+To ensure the reliability of the system, all data contained in the database must be correct
+and up-to-date at all times, and the database itself must be functional and connected to the
+system at all times. The portal must have a mechanism to detect failures and other errors
+and alert administrators so these will be fixed in the shortest possible period of time.
+
+\subsubsection{Availability:}
+The portal must be available for use at any time, on any web browser (including mobile
+browsers), and should it not be available for any particular reason, must recover from
+crashes in a short period of time (no longer than a day).
+
+\subsubsection{Security:}
+Access to the portal must be restricted by means of user authentication. The system must
+have the ability to prevent SQL injections and encrypt all confidential data such as
+passwords and marks.
+
+\subsubsection{Maintainability:}
+To ensure the maintainability of the system, the code must be written in a readable,
+structured and consistent manner. This will allow modifications to be made at any point
+without undesirable side effects.
+
+\subsection{Other requirements:}
+\subsubsection{Documentation:}
+It is required to continually update the requirement specification as system implementation
+changes, or as constraints highlight features which cannot be implemented. The
+documentation must be easy to read, informative, and must provide a clear approach as to
+how the task is to be implemented.
+
+\subsubsection{Long-term:}
+The aim of the project is to develop a fully working system that can be upgraded and/or
+modified where necessary. Once the testing phase is complete, and all initial errors are
+removed and solved, the system must move into a maintenance phase. This is where most
+focus is placed on the database, upkeep and maintaining of the portal, only making large,
+visible changes when vitally necessary, or during a version update release.
+\\
+\subsection{Proposed System Architecture:}
+The system needs to take into account all requirements and constraints, and based on these
+a web-based application will be implemented. Following the requirements, it should make
+use of the Model View Controller (MVC) pattern of software architecture. Additionally, this
+will also need to be implemented in a client-server setting due to users’ access requirements
+as well as for better usability.
+
+
+%%% End document
+\end{document}
