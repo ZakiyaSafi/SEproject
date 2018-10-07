@@ -1,0 +1,64 @@
+﻿@model IEnumerable<grader.Models.Course>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<!---EDIT THIS ONE-->
+<br />
+<br />
+<table>
+    <tr width="100%">
+        <th width="38%">
+            <a asp-controller="CCHome" asp-action="Create">
+                <input type="submit" value="Add Course" style="color:black" />
+            </a>
+        </th>
+        <th width="38%">
+            <a asp-controller="Reports" asp-action="SAreports">
+                <input type="submit" value="View Reports" style="color:black" />
+            </a>
+        </th>
+        <th width="38%">
+            <a asp-controller="Offences" asp-action="Index">
+                <input type="submit" value="View Offences" style="color:black" />
+            </a>
+        </th>
+    </tr>
+
+</table>
+<br />
+<h2>My Courses</h2>
+<br />
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Course Name
+            </th>
+            <th>
+                Course Code
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.courseName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.courseCode)
+                </td>
+                <td>
+                    <a asp-action="Index" asp-controller="SACCAssessments" asp-route-id="@item.courseID">Details</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<form>
+    <input type="hidden" value="CC" name="type" />
+</form>

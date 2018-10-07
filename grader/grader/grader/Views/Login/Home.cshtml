@@ -1,0 +1,78 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+<br />
+<br />
+<h2>Welcome to Gr(A+)der</h2>
+<h4>A portal for students and staff to view, upload, share and edit assessments and grades.</h4>
+
+
+<div class="border" style="width:40%; align-content:center; padding-left:15px; margin-left:55px; padding-top:15px; margin-top:35px;padding-bottom:15px; margin-bottom:55px">
+
+
+    <form method="post" class="form-horizontal" asp-action="Login" asp-controller="Login">
+        <!-- changed from receiveData-->
+        <fieldset>
+            <legend>Log In</legend>
+
+            <div class="form-group">
+                <label class="col-lg-2 control-label">UserType</label>
+                <div class="col-lg-10">
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="usertype" id="usertype" value="Student" checked="">
+                            Student
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="usertype" id="usertype" value="Course Coordinator">
+                            Course Coordinator
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="usertype" id="usertype" value="School Admin">
+                            School Admin
+                        </label>
+                    </div>
+                
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="inputEmail" class="col-lg-2 control-label">ID</label>
+                <div class="col-lg-10">
+                    <input type="text" class="form-control" name="ID" id="ID" placeholder="Student/Staff Number">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="inputPassword" class="col-lg-2 control-label">Password</label>
+                <div class="col-lg-10">
+                    <input type="password" class="form-control" name="password" id="password" placeholder="Password">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-lg-10 col-lg-offset-2">
+                    <button type="submit" class="btn btn-success" formaction="Login">Log In </button>
+                    <button type="reset" class="btn btn-default">Cancel</button>
+                </div>
+            </div>
+            <div>
+                <br />
+                <br />
+                Don't have an account? Click
+                <a href="#" style="color:#00A200"> here </a>
+                to create one!
+
+            </div>
+        </fieldset>
+    </form>
+
+
+    <br />
+</div>
+

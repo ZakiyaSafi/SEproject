@@ -1,0 +1,36 @@
+﻿@model grader.Models.Assessment
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Assessment</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.courseID)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.courseID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.assessmentTotalMark)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.assessmentTotalMark)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.assessmentWeighting)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.assessmentWeighting)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.assessmentID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

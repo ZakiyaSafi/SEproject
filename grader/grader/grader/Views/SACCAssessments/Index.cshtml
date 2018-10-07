@@ -1,0 +1,61 @@
+﻿@model IEnumerable<grader.Models.Assessment>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<br />
+<br />
+<table>
+    <tr>
+        <th>
+            <a asp-controller="SACCAssessments" asp-action="Create">
+                <input type="submit" value="Add Assessment" style="color:black" />
+            </a>
+        </th>
+        <th> <h6 style="opacity:0">vvv </h6></th>
+        <th>
+            <a asp-controller="Index" asp-action="Reports">
+                <input type="submit" value="View Reports" style="color:black" />
+            </a>
+        </th>
+    </tr>
+
+</table>
+<br />
+<h2>Assessments</h2>
+<br />
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Assessment Name
+            </th>    
+            <th>
+                    Total Mark
+                </th>
+                <th>
+                    Weighting
+                </th>
+                
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.assessmentName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.assessmentTotalMark)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.assessmentWeighting)
+            </td>
+            <td>
+                <a asp-action="Index" asp-controller="ManageMarks" asp-route-id="@item.assessmentID">Manage Marks</a> 
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

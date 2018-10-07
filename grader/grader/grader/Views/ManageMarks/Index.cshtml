@@ -1,0 +1,48 @@
+﻿@model IEnumerable<grader.Models.Mark>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<br />
+<br />
+<h2>Assessment Marks</h2>
+<br />
+<form>
+    <input type="submit" asp-action="Marks" asp-controller="ManageMarks" name="Upload Marks" value="Upload Marks"/>
+</form>
+<br />
+<br />
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    Student ID
+                </th>
+                <th>
+                   Assessment ID
+                </th>
+                <th>
+                    Mark Achieved
+                </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.studentID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.assessmentID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.markAchieved)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.markID">Edit</a> 
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

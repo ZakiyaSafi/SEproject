@@ -1,0 +1,46 @@
+﻿@model grader.Models.Assessment
+
+@{
+    ViewData["Title"] = "Create";
+}
+<br />
+<br />
+<h2>New Assessment</h2>
+<br />
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label class="control-label">Assessment Name</label>
+                <input asp-for="assessmentName" class="form-control" />
+                <span asp-validation-for="assessmentName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Course ID</label>
+                <input asp-for="courseID" class="form-control" />
+                <span asp-validation-for="courseID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Total Mark</label>
+                <input asp-for="assessmentTotalMark" class="form-control" />
+                <span asp-validation-for="assessmentTotalMark" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label"> Weighting (%) </label>
+                <input asp-for="assessmentWeighting" class="form-control" />
+                <span asp-validation-for="assessmentWeighting" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

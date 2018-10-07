@@ -1,0 +1,36 @@
+﻿@model grader.Models.Mark
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Mark</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.studentID)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.studentID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.assessmentID)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.assessmentID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.markAchieved)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.markAchieved)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.markID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

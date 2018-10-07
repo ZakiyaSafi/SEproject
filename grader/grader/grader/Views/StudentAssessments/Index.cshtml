@@ -1,0 +1,45 @@
+﻿@model IEnumerable<grader.Models.Assessment>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<br />
+<br />
+<h2>Assessments</h2>
+<br />
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Assessment Name
+            </th>
+                <th>
+                    Total Mark
+                </th>
+                <th>
+                    Weighting
+                </th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.assessmentName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.assessmentTotalMark)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.assessmentWeighting)
+            </td>
+            <td>
+                <a asp-controller="StudentMarks" asp-action="Details" asp-route-id="@item.assessmentID">View Marks</a> 
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

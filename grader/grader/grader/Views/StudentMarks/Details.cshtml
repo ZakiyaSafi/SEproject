@@ -1,0 +1,28 @@
+﻿@model grader.Models.Mark
+
+@{
+    ViewData["Title"] = "Details";
+}
+<br />
+<br />
+<h2>Assessment Mark</h2>
+<br />
+<div>
+    
+    <hr />
+    <h4>
+        <dl class="dl-horizontal">
+            <dt>
+                Mark Achieved:
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.markAchieved)
+            </dd>
+        </dl>
+    </h4>
+</div>
+<div>
+    <a asp-action="Approve" asp-route-id="@Model.markID">Query</a> 
+    
+</div>
+

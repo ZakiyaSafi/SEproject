@@ -1,0 +1,13 @@
+<FormGroup>
+                                        <ControlLabel>Voucher Type </ControlLabel>
+                                        <FormControl name={"Voucher Type"}>
+                                            <RadioGroup>
+                                                <RadioButton value="0">
+                                                    Discount Voucher
+                                                </RadioButton>
+                                                <RadioButton value="1">
+                                                    Free Wash Voucher
+                                                </RadioButton>
+                                            </RadioGroup>
+                                        </FormControl>
+                                    </FormGroup>

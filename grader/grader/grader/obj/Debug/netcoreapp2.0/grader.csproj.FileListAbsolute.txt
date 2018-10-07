@@ -1,0 +1,11 @@
+C:\Users\user\source\repos\grader\grader\bin\Debug\netcoreapp2.0\grader.deps.json
+C:\Users\user\source\repos\grader\grader\bin\Debug\netcoreapp2.0\grader.runtimeconfig.json
+C:\Users\user\source\repos\grader\grader\bin\Debug\netcoreapp2.0\grader.runtimeconfig.dev.json
+C:\Users\user\source\repos\grader\grader\bin\Debug\netcoreapp2.0\grader.dll
+C:\Users\user\source\repos\grader\grader\obj\Debug\netcoreapp2.0\grader.csprojAssemblyReference.cache
+C:\Users\user\source\repos\grader\grader\obj\Debug\netcoreapp2.0\grader.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\grader\grader\obj\Debug\netcoreapp2.0\grader.AssemblyInfoInputs.cache
+C:\Users\user\source\repos\grader\grader\obj\Debug\netcoreapp2.0\grader.AssemblyInfo.cs
+C:\Users\user\source\repos\grader\grader\bin\Debug\netcoreapp2.0\grader.pdb
+C:\Users\user\source\repos\grader\grader\obj\Debug\netcoreapp2.0\grader.dll
+C:\Users\user\source\repos\grader\grader\obj\Debug\netcoreapp2.0\grader.pdb
