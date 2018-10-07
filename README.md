@@ -1,9 +1,16 @@
 #SE Project 2018
 
+<<<<<<< Updated upstream
 Zakiya Safi             1319070
 Ahmed Ali Karani         1036074
 Zubair Ahmed Bulbulia     1249593
 Kyle Morris             1112649
+=======
+Zakiya Safi 1319070
+Ahmed Ali Karani 1036074
+Zubair Ahmed Bulbulia 1249593
+Kyle Morris 1112649
+>>>>>>> Stashed changes
 
 Project definition: 
 Students Marks/Record Management System
